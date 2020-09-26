@@ -9,7 +9,7 @@ const appointmentsRouter = Router();
 appointmentsRouter.use(ensureAuthenticated);
 
 // appointmentsRouter.get('/', async (request, response) => {
-//   const appointments = await appointmentsRepository.find();
+//   const appointments = await this.ormRepository.find();
 //   return response.json(appointments);
 // });
 

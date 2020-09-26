@@ -25,7 +25,7 @@ class AuthenticateUserService {
     private usersRepository: IUsersRepository,
 
     @inject('HashProvider')
-    private hashProvider?: IHashProvider,
+    private hashProvider: IHashProvider,
   ) {}
 
   public async execute({ email, password }: IRequest): Promise<IResponse> {
@@ -44,10 +44,14 @@ class AuthenticateUserService {
       throw new AppError('Incorrect email/password combination.', 401);
     }
 
-    const token = sign({}, authConfig.jwt.secret, {
+    const { secret, expiresIn } = authConfig.jwt;
+
+    const token = sign({}, secret, {
       subject: user.id,
-      expiresIn: authConfig.jwt.expiresIn,
+      expiresIn,
     });
+
+    console.log(token);
 
     return {
       user,
