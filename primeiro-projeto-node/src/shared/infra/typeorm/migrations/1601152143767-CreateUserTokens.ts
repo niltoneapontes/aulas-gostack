@@ -5,12 +5,18 @@ export default class CreateUserTokens1601152143767
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'user_token',
+        name: 'user_tokens',
         columns: [
           {
             name: 'id',
             type: 'uuid',
             isPrimary: true,
+            generationStrategy: 'uuid',
+            default: 'uuid_generate_v4()',
+          },
+          {
+            name: 'token',
+            type: 'uuid',
             generationStrategy: 'uuid',
             default: 'uuid_generate_v4()',
           },
