@@ -25,6 +25,7 @@
     ],
     "rules": {
       "no-useless-constructor": "off",
+      "import/no-extraneous-dependencies": "off",
       "@typescript-eslint/naming-convention": [
         "error",
         {
