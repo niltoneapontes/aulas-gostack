@@ -11,7 +11,7 @@ export const Container = styled.div`
     font-size: 14px;
     font-weight: 500;
     opacity: 0;
-    transition: all .4s;
+    transition: all 0.4s;
     visibility: hidden;
 
     position: absolute;
@@ -22,7 +22,7 @@ export const Container = styled.div`
     color: #312e38;
 
     &::before {
-      content: "";
+      content: '';
       border-style: solid;
       border-color: #ff9000 transparent;
       border-width: 6px 6px 0 6px;
@@ -33,7 +33,7 @@ export const Container = styled.div`
     }
   }
 
-  &:hover span{
+  &:hover span {
     opacity: 1;
     visibility: visible;
   }
