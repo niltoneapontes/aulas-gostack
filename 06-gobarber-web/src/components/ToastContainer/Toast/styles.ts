@@ -3,10 +3,10 @@ import { animated } from 'react-spring';
 
 interface ContainerProps {
   type?: string;
-  hasDescription: boolean;
+  hasDescription: number;
 }
 
-export const Container = styled(animated.div)<ContainerProps>`
+export const Container = styled(animated.div) <ContainerProps>`
   width: 360px;
   position: relative;
   padding: 16px 30px 16px 16px;
@@ -22,15 +22,19 @@ export const Container = styled(animated.div)<ContainerProps>`
     margin-top: 8px;
   }
 
-  ${(props) => props.type === 'success' && css`
-    background: #e6fffa;
-    color: #2e656a;
-  `}
+  ${props =>
+    props.type === 'success' &&
+    css`
+      background: #e6fffa;
+      color: #2e656a;
+    `}
 
-  ${(props) => props.type === 'error' && css`
-    background: #fddede;
-    color: #c53030;
-  `}
+  ${props =>
+    props.type === 'error' &&
+    css`
+      background: #fddede;
+      color: #c53030;
+    `}
 
   > svg {
     margin: 4px 12px 0 0;
@@ -57,11 +61,13 @@ export const Container = styled(animated.div)<ContainerProps>`
     color: inherit;
   }
 
-  ${(props) => !props.hasDescription && css`
-    align-items: center;
+  ${props =>
+    !props.hasDescription &&
+    css`
+      align-items: center;
 
-    svg {
-      margin-top: 0;
-    }
-  `}
+      svg {
+        margin-top: 0;
+      }
+    `}
 `;

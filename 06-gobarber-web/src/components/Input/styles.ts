@@ -20,21 +20,27 @@ export const Container = styled.div<ContainerProps>`
   align-items: center;
 
   & + div {
-      margin-top: 8px;
-    }
+    margin-top: 8px;
+  }
 
-  ${(props) => props.isErrored && css`
-    border-color: #c53030;
-  `}
+  ${props =>
+    props.isErrored &&
+    css`
+      border-color: #c53030;
+    `}
 
-  ${(props) => props.isFocused && css`
-    color: #ff9000;
-    border-color: #ff9000;
-  `}
+  ${props =>
+    props.isFocused &&
+    css`
+      color: #ff9000;
+      border-color: #ff9000;
+    `}
 
-  ${(props) => props.isFilled && css`
-    color: #ff9000;
-  `}
+  ${props =>
+    props.isFilled &&
+    css`
+      color: #ff9000;
+    `}
 
   input {
     flex: 1;
@@ -43,7 +49,7 @@ export const Container = styled.div<ContainerProps>`
     color: #f4ede8;
 
     &::placeholder {
-    color: #666360;
+      color: #666360;
     }
   }
 
@@ -65,7 +71,7 @@ export const Error = styled(Tooltip)`
     color: #fff;
   }
 
-  span::before{
+  span::before {
     border-color: #c53030 transparent;
   }
 `;
