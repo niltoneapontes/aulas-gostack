@@ -16,7 +16,6 @@ export const Content = styled.div`
   align-items: center;
   width: 100%;
   max-width: 500px;
-
 `;
 
 const appearFromRight = keyframes`
@@ -48,17 +47,16 @@ export const AnimationContainer = styled.div`
     }
 
     a {
-      color: #F4EDE8;
+      color: #f4ede8;
       display: block;
       margin-top: 24px;
       text-decoration: none;
       transition: color 0.2s;
 
       &:hover {
-        color: ${shade(0.2, '#f4ede8')}
+        color: ${shade(0.2, '#f4ede8')};
       }
     }
-
   }
 
   > a {
@@ -74,10 +72,9 @@ export const AnimationContainer = styled.div`
     }
 
     &:hover {
-        color: ${shade(0.2, '#ff9000')}
+      color: ${shade(0.2, '#ff9000')};
     }
   }
-
 `;
 
 export const Background = styled.div`
