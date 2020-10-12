@@ -31,6 +31,8 @@
     "rules": {
         "no-use-before-define":"off",
         "no-undef": "off",
+        "no-redeclare": "off",
+        "camelcase":"off",
         "no-unused-expressions": "off",
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "warn",
