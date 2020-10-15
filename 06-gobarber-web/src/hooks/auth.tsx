@@ -29,7 +29,7 @@ export const AuthContext = createContext<AuthContextState>(
   {} as AuthContextState,
 );
 
-export const AuthProvider: React.FC = ({ children }) => {
+const AuthProvider: React.FC = ({ children }) => {
   const [data, setData] = useState<AuthState>(() => {
     const token = localStorage.getItem('@GoBarber:token');
     const user = localStorage.getItem('@GoBarber:user');
@@ -87,12 +87,9 @@ export const AuthProvider: React.FC = ({ children }) => {
   );
 };
 
-export function useAuth(): AuthContextState {
+function useAuth(): AuthContextState {
   const context = useContext(AuthContext);
-
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-
   return context;
 }
+
+export { AuthProvider, useAuth };
