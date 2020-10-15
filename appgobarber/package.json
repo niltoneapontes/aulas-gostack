@@ -29,6 +29,7 @@
     "react-native-reanimated": "^1.13.0",
     "react-native-safe-area-context": "^3.1.7",
     "react-native-screens": "^2.10.1",
+    "react-native-testing-library": "^6.0.0",
     "react-native-vector-icons": "^7.1.0",
     "styled-components": "^5.2.0",
     "yup": "^0.29.3"
@@ -62,6 +63,7 @@
   },
   "jest": {
     "preset": "react-native",
+    "setupFiles": ["./src/setupTests.ts", "./node_modules/react-native-gesture-handler/jestSetup.js"],
     "moduleFileExtensions": [
       "ts",
       "tsx",
@@ -69,6 +71,9 @@
       "jsx",
       "json",
       "node"
+    ],
+    "collectCoverageFrom": [
+      "src/pages/**/*.tsx"
     ]
   }
 }
